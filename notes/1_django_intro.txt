@@ -1,0 +1,45 @@
+1. What is Django?
+	=> Django is a python web-framework
+	=> Are there any other python web-frameworks?
+		=> Flask
+		=> Pyramid
+		=> FastAPI
+
+
+Q. Why framework?
+	=> To not repeat same codes everytime we build a new application.
+
+
+2. Why Django?
+	=> It has most of the requirements already built up.
+	=> It is a complete package. 
+	=> Unlike Django, flask and pyramid are not complete packages.
+	=> It is a convenient tool to develop applications.
+	=> Better security features
+	=> RAD (Rapi Application Development)
+
+3. Types of Web Applications
+	=> SSR (Server Side Rendering) and SPA (Single Page Application)
+	=> We create SSR applications using Django only.
+	=> We create SPA applications using Django (API) + Frontend Frameworks (Angular, React, Vue)
+
+
+4. API (Application Programmable Interface)
+	=> It is a medium to connect two or more entites. The entities may be mobile application and backend, or backend and backend or frontend and backend.
+	=> Data is sent or received in JSON format (in REST APIs)
+
+
+5. What will we create SPA or SSR?
+=> For most classes we create SSR. But we will also learn to create REST APIs using Django Rest Framework (DRF).
+=> We will create a final project in SSR format.
+
+Q. Which architecture does Django work on?
+=> MVT (Model View Template) architecture
+=> But the more common architecture is MVC (Model View Controller). Laravel, .net these web frameworks follow MVC.
+
+
+6. Let's create a Django Project
+	=> Create and activate a virtual environment.
+	=> pip install django
+	=> django-admin startproject <project_name>
+

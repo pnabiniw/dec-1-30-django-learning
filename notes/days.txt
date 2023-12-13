@@ -1,0 +1,4 @@
+1. Django Project Setup
+2. Folders and files structure, apps, simple html rendering
+3. Template rendering
+4. Static rendering
