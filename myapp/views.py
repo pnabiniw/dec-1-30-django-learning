@@ -33,3 +33,7 @@ def home(request):
 
 def portfolio(request):
     return render(request, template_name="myapp/index.html")
+
+
+def temp_inherit_home(request):
+    return render(request, template_name='myapp/temp_inherit_home.html')
