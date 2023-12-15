@@ -36,4 +36,18 @@ def portfolio(request):
 
 
 def temp_inherit_home(request):
-    return render(request, template_name='myapp/temp_inherit_home.html')
+    items = [
+        {"name": "shirt", "store_location": "KTM", "price": 300},
+        {"name": "noodles", "store_location": "BKT", "price": 100},
+        {"name": "trousers", "store_location": "LTP", "price": 500},
+    ]
+    return render(request, template_name='myapp/temp_inherit_home.html', context={"name": "Jon", "age": 30,
+                                                                                  "address": "KTM", "items": items})
+
+
+def temp_inherit_features(request):
+    return render(request, template_name='myapp/temp_inherit_features.html')
+
+
+def temp_inherit_pricing(request):
+    return render(request, template_name='myapp/temp_inherit_pricing.html')
