@@ -4,3 +4,4 @@
 4. Static rendering
 5. Template inheritance and navigation
 6. Context passing to templates
+7. DTL conditions, context processors & loop and Model Introduction

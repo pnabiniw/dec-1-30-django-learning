@@ -17,6 +17,13 @@
         </tr>
         </thead>
         <tbody>
+        {{ debug }}
+        {% if name == "Jon" %}
+        <h2>{{ name}}</h2>
+        {% else %}
+        <h2>No name available</h2>
+        {% endif %}
+
         {% for item in items %}
         <tr>
             <th scope="row">{{ forloop.counter }}</th>
