@@ -8,6 +8,22 @@ There are three types of model relation:
     If you have to group a group of items under a same roof then you can use One-Many relationship.
     For example, MenuCategory and MenuItems, Students under a same Classroom, Participants under a same chatroom
 
+    ORMs:
+    Student.objects.create(name="", age="", classroom=<obj>)
+    Student.objects.create(name="", age="", classroom_id=1)
+
+    Student.objects.filter(id=1).update(classroom_id=2)
+
+    student = Student.objects.get(id=1)
+    student.classroom_id=3
+    student.save()
+
+    student.classroom.name
+
+    classroom = ClassRoom.objects.get(id=1)
+    students = classroom.classroom_students.all()
+
+
 2. One-One Relation
     If you have to maintain a unique relationship between two tables then you can user One-One Relationship.
     For example, user and user profile, Country and Prime Minister etc.
