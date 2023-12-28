@@ -17,7 +17,6 @@ class Student(models.Model):  # class name later becomes the table name in the d
         return self.name
 
 
-
 class StudentProfile(models.Model):
     student = models.OneToOneField(Student, on_delete=models.CASCADE)
     phone = models.CharField(max_length=14)
