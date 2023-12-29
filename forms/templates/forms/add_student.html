@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Add Student</h1><br>
-    <form method="post" action="{% url 'add_student' %}">
+    <form method="post" action="{% url 'add_student' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-row">
             <div class="form-group col-md-6">

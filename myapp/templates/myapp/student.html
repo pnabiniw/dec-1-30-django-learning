@@ -22,9 +22,10 @@
             <td>{{ student.email }}</td>
             <td>{{ student.address }}</td>
             <td>
-                <a class="btn btn-primary" href="#">Detail</a>
+                <a class="btn btn-primary" href="{% url 'detail_student' student.id %}">Detail</a>
                 <a class="btn btn-success" href="#">Update</a>
-                <a class="btn btn-danger" href="#">Delete</a>
+                <a class="btn btn-danger" href="{% url 'delete_student' student.id %}">Delete</a>
+
             </td>
         </tr>
         {% endfor %}

@@ -32,3 +32,16 @@ def add_student(request):
         return redirect("student")
     classrooms = ClassRoom.objects.all()
     return render(request, template_name="forms/add_student.html", context={"classrooms": classrooms})
+
+
+def delete_student(request, id):
+    student = Student.objects.get(id=id)
+    if request.method == "POST":
+        student.delete()
+        return redirect("student")
+    return render(request, template_name="forms/delete_student.html", context={"student": student})
+
+
+def detail_student(request, id):
+    student = Student.objects.get(id=id)
+    return render(request, template_name="forms/detail_student.html", context={"student": student})

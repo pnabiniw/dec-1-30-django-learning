@@ -11,4 +11,5 @@
 11. One-One and Many-Many Relation (Dec 22)
 12. Forms (Classroom Form) (Dec 26)
 13. Add Student Form (Dec 27)
-14. Media => Image Upload (Dec 28)
+14. Student Profile Create and Media settings (Dec 28)
+15. Media => Image Upload and Student Detail (Dec 29)
