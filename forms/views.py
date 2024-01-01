@@ -45,3 +45,30 @@ def delete_student(request, id):
 def detail_student(request, id):
     student = Student.objects.get(id=id)
     return render(request, template_name="forms/detail_student.html", context={"student": student})
+
+
+def update_student(request, id):
+    student = Student.objects.get(id=id)
+    if request.method == "POST":
+        name = request.POST.get("name")
+        age = request.POST.get("age")
+        email = request.POST.get("email")
+        address = request.POST.get("address")
+        classroom_id = request.POST.get("classroom_id")
+        Student.objects.filter(id=id).update(name=name, age=age, email=email, address=address,
+                                             classroom_id=classroom_id)
+
+        phone = request.POST.get("phone")
+        bio = request.POST.get("bio")
+        roll = request.POST.get("roll")
+        pp = request.FILES.get('pp')
+        profile, _ = StudentProfile.objects.update_or_create(student_id=id,
+                                                             defaults=dict(phone=phone, bio=bio, roll_no=roll))
+        # (obj, False)
+        if pp:
+            profile.profile_picture = pp
+            profile.save()
+        return redirect("student")
+    classrooms = ClassRoom.objects.all()
+    return render(request, template_name="forms/update_student.html", context={"student": student,
+                                                                               "classrooms": classrooms})
