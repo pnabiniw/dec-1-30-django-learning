@@ -7,8 +7,7 @@ def add_classroom(request):
         class_name = request.POST.get("classname")
         ClassRoom.objects.create(name=class_name)  # ORM
         return redirect("add_classroom")
-    classrooms = ClassRoom.objects.all()
-    return render(request, template_name="forms/classroom.html", context={"classrooms": classrooms})
+    return render(request, template_name="forms/classroom.html", context={"classrooms": ClassRoom.objects.all()})
 
 
 def add_student(request):

@@ -7,6 +7,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("crud/", include('forms.urls')),
+    path("classbased/", include("classbased.urls")),
     path("", include('myapp.urls'))
 ]
 
