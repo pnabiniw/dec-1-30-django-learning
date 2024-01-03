@@ -16,6 +16,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -23,6 +24,10 @@
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ class.name }}</td>
+                <td>
+                    <a class="btn btn-primary" href="#">Update</a>
+                    <a href="{% url 'classbased_delete_classroom' class.id %}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
