@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from myapp.models import ClassRoom, Student
 from django.urls import reverse_lazy
 from .forms import ClassRoomModelForm
@@ -35,3 +35,10 @@ def delete_classroom(request, id):
         return redirect("classbased_classroom")
     return render(request, template_name="classbased/delete_classroom.html",
                   context={"classroom": classroom})
+
+
+class ClassRoomUpdateView(UpdateView):
+    template_name = "classbased/classroom_update.html"
+    form_class = ClassRoomModelForm
+    queryset = ClassRoom.objects.all()
+    success_url = reverse_lazy("classbased_classroom")

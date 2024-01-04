@@ -16,3 +16,4 @@
 16. Student Update (Jan 1 2024)
 17. Class Based Views (Jan 2)
 18. Class Based CRUD (Jan 3)
+19. Class Based Update and API Introduction

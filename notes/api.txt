@@ -1,0 +1,27 @@
+1. API stands for Application Programmable Interface
+2. It is a communication method among two or more entities such as BE and FE,
+BE and mobile app, BE and BE etc.
+
+
+3. There are different types of APIs.
+    i) SOAP API
+        => In this API data is transferred in XML format
+        => student info:
+
+        <student1>
+            <name>Jon</name>
+            <age>30</age>
+            <email>a@a.com</email>
+        </student1>
+
+    ii) REST API
+        => In this API data is transferred in JSON format.
+        => Student info
+        {
+            "student":{
+                "name": "Jon",
+                "age": 30,
+                "email": "a@a.com"
+            }
+        }
+

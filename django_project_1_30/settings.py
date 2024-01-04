@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ["myapp", "forms", "classbased"]
+PROJECT_APPS = ["myapp", "forms", "classbased", "api"]
 THIRD_PARTY_APPS = []
 INSTALLED_APPS += PROJECT_APPS + THIRD_PARTY_APPS
 
