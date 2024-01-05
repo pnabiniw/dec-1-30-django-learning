@@ -25,11 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 PROJECT_APPS = ["myapp", "forms", "classbased", "api"]
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ['rest_framework']
 INSTALLED_APPS += PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
