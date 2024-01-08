@@ -45,3 +45,30 @@ class StudentListAPIView(APIView):
         # serializer = StudentSerializer(students, many=True)  # serialization
         serializer = StudentModelSerializer(students, many=True)  # serialization
         return Response(serializer.data)
+
+    # def post(self, *args, **kwargs):
+    #     print(self.request.data)
+    #     name = self.request.data.get("name")
+    #     age = self.request.data.get("age")
+    #     email = self.request.data.get("email")
+    #     address = self.request.data.get("address")
+    #     Student.objects.create(name=name, age=age, email=email, address=address)
+    #     return Response({
+    #         "message": "Student Created Successfully"
+    #     })
+
+    def post(self, *args, **kwargs):
+        serializer = StudentModelSerializer(data=self.request.data)  # deserialization
+        if serializer.is_valid():
+            name = serializer.validated_data['name']
+            age = serializer.validated_data['age']
+            email = serializer.validated_data['email']
+            address = serializer.validated_data['address']
+            Student.objects.create(name=name, age=age, email=email, address=address)
+            return Response({
+                "message": "Student Created Successfully"
+            })
+        return Response({
+            "message": "Invalid Request Data"
+        })
+

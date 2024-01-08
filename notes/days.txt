@@ -18,3 +18,4 @@
 18. Class Based CRUD (Jan 3)
 19. Class Based Update and API Introduction (Jan 4)
 20. APIView (Jan 5)
+21. Post Request (Jan 8)
