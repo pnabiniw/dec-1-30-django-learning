@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from myapp.models import Student
+from myapp.models import Student, ClassRoom
 
 
 class StudentSerializer(serializers.Serializer):
@@ -9,7 +9,22 @@ class StudentSerializer(serializers.Serializer):
     email = serializers.EmailField()
 
 
+class ClassRoomModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ClassRoom
+        fields = ["id", "name"]
+
+
 class StudentModelSerializer(serializers.ModelSerializer):
+    # classroom = ClassRoomModelSerializer()
+
     class Meta:
         model = Student
-        fields = ["id", "name", "email", "address", "classroom"]
+        fields = ["id", "name", "email", "address", "classroom", "age"]
+
+    def get_fields(self):
+        fields = super().get_fields()
+        request = self.context.get('request')
+        if request and request.method.lower() == 'get':
+            fields['classroom'] = ClassRoomModelSerializer()
+        return fields

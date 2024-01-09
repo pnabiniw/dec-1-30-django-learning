@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView, \
+    ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 from myapp.models import Student
 
@@ -72,3 +74,32 @@ class StudentListAPIView(APIView):
             "message": "Invalid Request Data"
         })
 
+
+class StudentListView(ListAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
+
+
+class StudentCreateView(CreateAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
+
+
+class StudentUpdateView(UpdateAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
+
+
+class StudentDeleteView(DestroyAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
+
+
+class StudentListCreateView(ListCreateAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
+
+
+class StudentRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
