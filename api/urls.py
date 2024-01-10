@@ -1,7 +1,13 @@
 from django.urls import path
+from rest_framework.routers import DefaultRouter
 from .views import hello_world, student_info, StudentGetAPIView, StudentListAPIView, \
     StudentListView, StudentCreateView, StudentUpdateView, StudentDeleteView, StudentListCreateView, \
-    StudentRetrieveUpdateDeleteView
+    StudentRetrieveUpdateDeleteView, ClassRoomViewSet, StudentViewSet
+
+router = DefaultRouter()
+
+router.register('classroom', ClassRoomViewSet)
+router.register('student', StudentViewSet)
 
 urlpatterns = [
     path("hello-world/", hello_world),
@@ -20,4 +26,4 @@ generic_urls = [
     path("generic-student-retrieve-update-delete/<int:pk>/", StudentRetrieveUpdateDeleteView.as_view()),
 ]
 
-urlpatterns += generic_urls
+urlpatterns += generic_urls + router.urls

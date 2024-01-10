@@ -3,10 +3,11 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView, \
     ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from myapp.models import Student
+from myapp.models import Student, ClassRoom
 
-from .serializers import StudentSerializer, StudentModelSerializer
+from .serializers import StudentSerializer, StudentModelSerializer, ClassRoomModelSerializer
 
 
 def hello_world(request):
@@ -101,5 +102,15 @@ class StudentListCreateView(ListCreateAPIView):
 
 
 class StudentRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
+    serializer_class = StudentModelSerializer
+    queryset = Student.objects.all()
+
+
+class ClassRoomViewSet(ModelViewSet):
+    serializer_class = ClassRoomModelSerializer
+    queryset = ClassRoom.objects.all()
+
+
+class StudentViewSet(ModelViewSet):
     serializer_class = StudentModelSerializer
     queryset = Student.objects.all()
