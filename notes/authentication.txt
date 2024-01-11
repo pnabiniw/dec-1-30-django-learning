@@ -1,0 +1,7 @@
+Types of Authentication
+
+1. Basic Authentication
+2. Session Authentication
+3. Token Authentication
+4. JWT Authentication (JSON WebToken)
+
